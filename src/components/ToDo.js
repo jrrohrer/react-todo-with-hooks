@@ -4,7 +4,8 @@ import React from 'react'
 const ToDo = ({todo}) => {
 
   return (
-    <div>
+    // className will be "strike" if the todo is complete
+    <div className={todo.complete ? "strike" : ""}>
       {todo.task}
     </div>
   )
