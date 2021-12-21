@@ -12,7 +12,7 @@ const ToDo = ({todo, handleToggle}) => {
     // className will be "strike" if the todo is complete
     <div 
       id={todo.id} 
-      key={todo.id + todo.task} 
+      key={todo.id} 
       className={todo.complete ? "strike" : ""} 
       onClick={handleClick}
     >
