@@ -1,11 +1,21 @@
 // Todo list items
 import React from 'react'
 
-const ToDo = ({todo}) => {
+const ToDo = ({todo, handleToggle}) => {
 
+  const handleClick = (e) => {
+    e.preventDefault()
+    handleToggle(e.currentTarget.id)
+  }
+ 
   return (
     // className will be "strike" if the todo is complete
-    <div className={todo.complete ? "strike" : ""}>
+    <div 
+      id={todo.id} 
+      key={todo.id + todo.task} 
+      className={todo.complete ? "strike" : ""} 
+      onClick={handleClick}
+    >
       {todo.task}
     </div>
   )
